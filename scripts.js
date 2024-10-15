@@ -197,16 +197,19 @@ console.assert(
 //------------------------------------------------------------------------------
 // Leiðbeint ferli
 
-function start() {
-  alert(
-    "Sláðu inn streng með nokkrum orðum til að fá upplýsingar um:\n" +
-    "- Lengsta orðið.\n" +
-    "- Stysta orðið.\n" +
-    "- Strenginn snúið við.\n" +
-    "- Fjölda sérhljóða í streng.\n" +
-    "- Fjölda samhljóða í streng.\n" +
-    "- Hvort strengurinn sé samhverfur."
-  );
+function start(leidbeiningar = true) {
+
+  if (leidbeiningar) {
+    alert(
+      "Sláðu inn streng með nokkrum orðum til að fá upplýsingar um:\n" +
+      "- Lengsta orðið.\n" +
+      "- Stysta orðið.\n" +
+      "- Strenginn snúið við.\n" +
+      "- Fjölda sérhljóða í streng.\n" +
+      "- Fjölda samhljóða í streng.\n" +
+      "- Hvort strengurinn sé samhverfur."
+    );
+  }
 
   let input = prompt("Sláðu inn streng:");
 
@@ -231,7 +234,7 @@ function start() {
 
     let again = confirm("Viltu prófa aftur?");
     if (again) {
-      start();
+      start(false);
     }
   }
 }
